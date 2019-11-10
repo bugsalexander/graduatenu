@@ -157,7 +157,7 @@ async function prereqifyScheduleCourse(
     // produces the class.
     queryResult = await loader.load({
       subject: course.subject,
-      classId: course.classId,
+      classId: Number(course.classId),
       termId: termId,
     });
   } catch (err) {
@@ -234,6 +234,8 @@ async function queryCoursePrereqData(
     // - prereqs
     // - corereqs
     // - name
+
+    // however, searchNEU stores the classId as a string rather than a number
 
     // if the result was found (aka results were not null), then push
     const current = data[`course${i}`];

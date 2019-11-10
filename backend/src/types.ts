@@ -247,7 +247,7 @@ export enum Status {
  * @param numCreditsMax the maximum number of credits this course gives
  */
 export interface ScheduleCourse {
-  classId: number;
+  classId: string;
   subject: string;
   prereqs?: INEUAndPrereq | INEUOrPrereq;
   coreqs?: INEUAndPrereq | INEUOrPrereq;

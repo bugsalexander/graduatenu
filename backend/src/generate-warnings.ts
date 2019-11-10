@@ -291,7 +291,7 @@ export function oldToNew(
     const detailed: INEUCourse | undefined = getSearchNEUData(course, parent);
     if (detailed) {
       byTermId.termMap[detailed.termId].push({
-        classId: detailed.classId,
+        classId: String(detailed.classId),
         subject: detailed.subject,
         prereqs: detailed.prereqs,
         coreqs: detailed.coreqs,
@@ -310,7 +310,7 @@ export function oldToNew(
 
       if (mostRecent) {
         byTermId.termMap[course.termId].push({
-          classId: course.classId,
+          classId: String(course.classId),
           subject: course.subject,
           prereqs: mostRecent.prereqs,
           coreqs: mostRecent.coreqs,
@@ -319,7 +319,7 @@ export function oldToNew(
         });
       } else {
         byTermId.termMap[course.termId].push({
-          classId: course.classId,
+          classId: String(course.classId),
           subject: course.subject,
           prereqs: undefined,
           coreqs: undefined,

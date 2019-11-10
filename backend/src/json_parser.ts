@@ -15,6 +15,7 @@ import {
   IScheduleCourse,
   UserChoice,
   CourseTakenTracker,
+  ScheduleCourse,
 } from "./types";
 
 /**
@@ -376,6 +377,7 @@ export const courseCode = (
     | INEUCourse
     | INEUPrereqCourse
     | IScheduleCourse
+    | ScheduleCourse
 ) => {
   return "" + course.subject + course.classId;
 };
